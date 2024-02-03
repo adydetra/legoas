@@ -134,7 +134,7 @@ onMounted(() => {
     piutang.value = JSON.parse(localStorageData);
   }
   else {
-    DataPiutangService.getDataPiutangsXLarge().then((data) => {
+    DataPiutangService.getDataPiutangXLarge().then((data) => {
       piutang.value = data;
     });
   }
