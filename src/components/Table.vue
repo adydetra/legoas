@@ -198,7 +198,7 @@ onMounted(() => {
         <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Cari pemilik" />
       </template>
     </Column>
-    <Column v-for="column in columns" :key="column.field" :field="column.field" :header="column.header" :style="`min-width:${column.style}rem`" :sortable="column.sortable">
+    <Column v-for="column in columns" :key="column.field" :field="column.field" :header="column.header" :style="`min-width:${column.style}rem`" sortable>
       <template #body="{ data }">
         {{ data[column.field] }}
       </template>
