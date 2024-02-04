@@ -22,4 +22,7 @@ a {
   font-size: 1rem;
   margin: 2.5rem 0 0 0;
 }
+a:hover {
+  color: #165cac;
+}
 </style>

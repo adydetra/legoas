@@ -13,7 +13,7 @@ const items = ([
     <Breadcrumb id="breadcrumb" :home="home" :model="items">
       <template #item="{ item, props }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-          <a :href="href" v-bind="props.action" @click="navigate">
+          <a v-bind="props.action" id="icon" :href="href" @click="navigate">
             <span class="text-color" :class="[item.icon]" />
           </a>
         </router-link>
@@ -29,6 +29,9 @@ const items = ([
 <style scoped>
 #breadcrumb {
   margin: 1rem 0;
+}
+#icon:hover {
+  color: #165cac;
 }
 .p-breadcrumb{
   padding: 1rem 0;
