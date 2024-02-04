@@ -169,7 +169,7 @@ onMounted(() => {
         </div>
         <span class="p-input-icon-left">
           <i class="pi pi-search" />
-          <InputText v-model="filters.global.value" placeholder="Kata Kunci" />
+          <InputText v-model="filters.global.value" placeholder="Pencarian" />
         </span>
         <div id="box">
           <Button type="button" icon="pi pi-filter-slash" label="Clear" outlined @click="clearFilter()" />
