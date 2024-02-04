@@ -13,3 +13,7 @@ cd legoas
 ```sh
 pnpm install && pnpm dev
 ```
+
+## License
+
+The code is licensed [MIT](LICENSE)
