@@ -162,8 +162,8 @@ onMounted(() => {
           <Button icon="pi pi-wallet" label="Bayar" severity="info" rounded :disabled="!CheckboxSelected" @click="visible = true" />
           <Dialog v-model:visible="visible" modal header="Anda yakin ingin bayar?" :style="{ width: '25rem' }">
             <div id="dialog-box-button">
-              <Button type="button" label="Batalkan" severity="secondary" @click="visible = false" />
-              <Button type="button" label="Bayar" @click="bayar(visible = false)" />
+              <Button type="button" label="Batalkan" icon="pi pi-times" severity="danger" @click="visible = false" />
+              <Button type="button" label="Bayar" icon="pi pi-wallet" severity="info" @click="bayar(visible = false)" />
             </div>
           </Dialog>
         </div>
