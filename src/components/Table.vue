@@ -14,7 +14,6 @@ const columns = [
   { field: 'hargaTerbentuk', header: 'Harga Terbentuk (Rp)', style: '12' },
   { field: 'biayaAdmin', header: 'Biaya Admin ex PPN (Rp)', style: '16' },
   { field: 'ppn', header: 'PPN (Rp)', style: '16' },
-  { field: 'total', header: 'Total (Rp)', style: '12' },
 ];
 
 // Checkbox select
@@ -34,7 +33,6 @@ function exportCSV() {
   dataPiutang.value.exportCSV({
     selectionOnly: selectedProduct.value.length > 0,
     customData: exportData,
-    fileName: 'data-piutang-unit.csv',
   });
 }
 
@@ -139,6 +137,10 @@ onMounted(() => {
     });
   }
 });
+
+function calculateTotal(item) {
+  return item.hargaTerbentuk + item.biayaAdmin + item.ppn;
+}
 </script>
 
 <template>
@@ -204,6 +206,14 @@ onMounted(() => {
       </template>
       <template #filter="{ filterModel }">
         <InputText v-model="filterModel.value" type="text" class="p-column-filter" :placeholder="`Cari ${column.header}`" />
+      </template>
+    </Column>
+    <Column field="total" header="Total (Rp)" style="min-width: 12rem" sortable>
+      <template #body="{ data }">
+        {{ calculateTotal(data) }}
+      </template>
+      <template #filter="{ filterModel }">
+        <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Cari pemilik" />
       </template>
     </Column>
     <Column field="tanggal.lelang" header="Tanggal Lelang" style="min-width: 12rem" sortable>
