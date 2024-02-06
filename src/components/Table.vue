@@ -213,7 +213,7 @@ function calculateTotal(item) {
         {{ calculateTotal(data) }}
       </template>
       <template #filter="{ filterModel }">
-        <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Cari pemilik" />
+        <InputText v-model="filterModel.value" type="text" class="p-column-filter" placeholder="Cari Total" />
       </template>
     </Column>
     <Column field="tanggal.lelang" header="Tanggal Lelang" style="min-width: 12rem" sortable>
