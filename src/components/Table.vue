@@ -1,6 +1,8 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import { FilterMatchMode, FilterOperator } from 'primevue/api';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
 import { DataPiutangService } from '@/utils/data';
 
 const visible = ref(false);
@@ -169,10 +171,12 @@ function calculateTotal(item) {
             </div>
           </Dialog>
         </div>
-        <span class="p-input-icon-left">
-          <i class="pi pi-search" />
+        <IconField icon-position="left">
+          <InputIcon>
+            <i class="pi pi-search" />
+          </InputIcon>
           <InputText v-model="filters.global.value" placeholder="Pencarian" />
-        </span>
+        </IconField>
         <div id="box">
           <Button type="button" icon="pi pi-filter-slash" label="Clear" outlined @click="clearFilter()" />
           <Button icon="pi pi-refresh" severity="contrast" @click="refreshTable" />
