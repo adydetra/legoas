@@ -10,7 +10,10 @@ import { PrimeVueResolver } from 'unplugin-vue-components/resolvers';
 
 export default defineConfig({
   plugins: [
-    AutoImport({}),
+    AutoImport({
+      imports: ['vue'],
+      vueTemplate: true,
+    }),
     Components({
       resolvers: [
         PrimeVueResolver(),
