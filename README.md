@@ -13,7 +13,7 @@ cd legoas
 ```
 
 ```sh
-pnpm install && pnpm dev
+bun install && bun dev
 ```
 
 ## License
